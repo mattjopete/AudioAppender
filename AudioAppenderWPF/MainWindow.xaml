@@ -1,13 +1,28 @@
-﻿<Window x:Class="AudioAppenderWPF.MainWindow"
+﻿<fw:AcrylicWindow x:Class="AudioAppenderWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AudioAppenderWPF"
+          xmlns:local="clr-namespace:AudioAppenderWPF"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="217,163,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        Title="Audio Appender" Height="450" Width="800"
+        fw:AcrylicWindow.Enabled="True">
+    <Grid fw:PointerTracker.Enabled="True" Background="#70FFFFFF" Margin="3">
+        <StackPanel Orientation="Vertical">
+            <StackPanel fw:PointerTracker.Enabled="True" Background="#70FFFFFF" Margin="3" HorizontalAlignment="Left" Orientation="Horizontal" Height="25" Width="350">
+                <TextBox Width="275"
+                Style="{StaticResource TextBoxRevealStyle}"   />
+                <Button Content="Open" Width="75" 
+                    Style="{StaticResource ButtonRevealStyle}"
+                    Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                    Background="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1Brush}"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="676,24,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" 
+                Style="{StaticResource ButtonRevealStyle}" 
+                Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                Background="{x:Static fw:AccentColors.ImmersiveSystemAccentLight1Brush}"/>
 
     </Grid>
-</Window>
+</fw:AcrylicWindow>

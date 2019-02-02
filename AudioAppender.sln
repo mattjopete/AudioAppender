@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioAppenderConsole", "AudioAppenderConsole\AudioAppenderConsole.csproj", "{3195461B-AE42-4065-81B0-8CE82A284EEC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioAppenderWPF", "AudioAppenderWPF\AudioAppenderWPF.csproj", "{C4253C66-9917-48A0-B793-EFA4459C3091}"
 EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "AudioAppenderPackagingProject", "AudioAppenderPackagingProject\AudioAppenderPackagingProject.wapproj", "{488CDB71-7E0F-43F9-AB29-015DD827C4DD}"
@@ -19,18 +17,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Debug|x64.Build.0 = Debug|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Debug|x86.Build.0 = Debug|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Release|x64.ActiveCfg = Release|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Release|x64.Build.0 = Release|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Release|x86.ActiveCfg = Release|Any CPU
-		{3195461B-AE42-4065-81B0-8CE82A284EEC}.Release|x86.Build.0 = Release|Any CPU
 		{C4253C66-9917-48A0-B793-EFA4459C3091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4253C66-9917-48A0-B793-EFA4459C3091}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4253C66-9917-48A0-B793-EFA4459C3091}.Debug|x64.ActiveCfg = Debug|Any CPU
