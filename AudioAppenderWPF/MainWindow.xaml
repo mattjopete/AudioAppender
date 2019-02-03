@@ -8,21 +8,46 @@
         mc:Ignorable="d"
         Title="Audio Appender" Height="450" Width="800"
         fw:AcrylicWindow.Enabled="True">
-    <Grid fw:PointerTracker.Enabled="True" Background="#70FFFFFF" Margin="3">
-        <StackPanel Orientation="Vertical">
-            <StackPanel fw:PointerTracker.Enabled="True" Background="#70FFFFFF" Margin="3" HorizontalAlignment="Left" Orientation="Horizontal" Height="25" Width="350">
+    <Grid fw:PointerTracker.Enabled="True" Background="#AAFFFFFF" Margin="3">
+        <StackPanel Name="FileStack" Orientation="Vertical" HorizontalAlignment="Left" Width="350"  >
+            <Label>Select the files you would like to combine</Label>
+            <StackPanel fw:PointerTracker.Enabled="True" Margin="3" HorizontalAlignment="Left" Orientation="Horizontal" Width="350">
                 <TextBox Width="275"
-                Style="{StaticResource TextBoxRevealStyle}"   />
+                    Style="{StaticResource TextBoxRevealStyle}"/>
                 <Button Content="Open" Width="75" 
+                    Style="{StaticResource ButtonRevealStyle}"
+                    Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                    Background="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1Brush}"
+                    Click="OpenFile_Click"/>
+            </StackPanel>
+            <StackPanel fw:PointerTracker.Enabled="True" Margin="3" HorizontalAlignment="Left" Orientation="Horizontal" Width="350">
+                <TextBox Width="275"
+                    Style="{StaticResource TextBoxRevealStyle}"/>
+                <Button Content="Open" Width="75" 
+                    Style="{StaticResource ButtonRevealStyle}"
+                    Foreground="{DynamicResource SystemBaseHighColorBrush}" 
+                    Background="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1Brush}"
+                    Click="OpenFile_Click"/>
+            </StackPanel>
+            <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="AddFileSource_Click" 
+                Style="{StaticResource ButtonRevealStyle}" 
+                Background="Transparent"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Width="350" >
+            <Label>Select the place you want the file to be saved</Label>
+            <StackPanel Orientation="Horizontal" Margin="3" fw:PointerTracker.Enabled="True" >
+                <TextBox Width="275"
+                    Style="{StaticResource TextBoxRevealStyle}"/>
+                <Button Content="Open" HorizontalAlignment="Left"  Width="75" Click="OuputFilePicker_Click"
                     Style="{StaticResource ButtonRevealStyle}"
                     Foreground="{DynamicResource SystemBaseHighColorBrush}" 
                     Background="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1Brush}"/>
             </StackPanel>
-        </StackPanel>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="676,24,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" 
+            <Button Content="Save" HorizontalAlignment="Right" Width="75" Click="SaveFile_Click" VerticalAlignment="Bottom" Margin="3"
                 Style="{StaticResource ButtonRevealStyle}" 
-                Foreground="{DynamicResource SystemBaseHighColorBrush}" 
-                Background="{x:Static fw:AccentColors.ImmersiveSystemAccentLight1Brush}"/>
+                />
+        </StackPanel>
+
 
     </Grid>
 </fw:AcrylicWindow>
