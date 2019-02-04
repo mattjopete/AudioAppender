@@ -34,15 +34,6 @@
                 Background="Transparent"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" Width="350" >
-            <Label>Select the place you want the file to be saved</Label>
-            <StackPanel Orientation="Horizontal" Margin="3" fw:PointerTracker.Enabled="True" >
-                <TextBox Width="275" Name="OutputFileTextbox"
-                    Style="{StaticResource TextBoxRevealStyle}"/>
-                <Button Content="Open" HorizontalAlignment="Left"  Width="75" Click="OuputFilePicker_Click"
-                    Style="{StaticResource ButtonRevealStyle}"
-                    Foreground="{DynamicResource SystemBaseHighColorBrush}" 
-                    Background="{x:Static fw:AccentColors.ImmersiveSystemAccentDark1Brush}"/>
-            </StackPanel>
             <Button Content="Save" HorizontalAlignment="Right" Width="75" Click="SaveFile_Click" VerticalAlignment="Bottom" Margin="3"
                 Style="{StaticResource ButtonRevealStyle}" 
                 />
