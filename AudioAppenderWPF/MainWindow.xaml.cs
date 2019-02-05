@@ -80,6 +80,8 @@ namespace AudioAppenderWPF
                 }
 
                 ClearTextBoxes();
+
+                MessageBox.Show("Saved Successfully", "", MessageBoxButton.OK, MessageBoxImage.None);
             }
         }
 
