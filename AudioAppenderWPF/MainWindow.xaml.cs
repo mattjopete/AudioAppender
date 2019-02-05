@@ -78,8 +78,9 @@ namespace AudioAppenderWPF
                     output.CopyTo(fileStream);
                     output.Flush();
                 }
-            }
 
+                ClearTextBoxes();
+            }
         }
 
         private void AddFileSource_Click(object sender, RoutedEventArgs e)
@@ -128,6 +129,25 @@ namespace AudioAppenderWPF
             }
 
             return null;//Have to do this becuase UIElementCollection doesn't have Linq support
+        }
+
+        private void ClearTextBoxes()
+        {
+            foreach (var selectedFile in FileStack.Children)
+            {
+                if (selectedFile is StackPanel)
+                {
+                    var selectedFileStack = (StackPanel)selectedFile;
+                    foreach (var property in selectedFileStack.Children)
+                    {
+                        if (property.GetType() == typeof(TextBox))
+                        {
+                            var textbox = (TextBox)property;
+                            textbox.Text = string.Empty;
+                        }
+                    }
+                }
+            }
         }
     }
 }
