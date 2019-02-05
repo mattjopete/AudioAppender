@@ -37,6 +37,7 @@ namespace AudioAppenderWPF
         {
 
             var saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "(*.mp3)|*.mp3";
             if (saveFileDialog.ShowDialog() == true)
             {
                 var audioConcatenator = new AudioConcatenator();
