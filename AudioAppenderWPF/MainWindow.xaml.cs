@@ -57,9 +57,11 @@ namespace AudioAppenderWPF
 
             if(files.Count <2)
             {
+                //If there is not at least two files the tool won't do anything so just return
                 ErrorText.Visibility = Visibility.Visible;
                 return;
             }
+
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "(*.mp3)|*.mp3";
             saveFileDialog.DefaultExt = "mp3";
