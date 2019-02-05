@@ -9,7 +9,7 @@
         Title="Audio Appender" Height="450" Width="800"
         fw:AcrylicWindow.Enabled="True">
     <Grid fw:PointerTracker.Enabled="True" Background="#AAFFFFFF" Margin="3">
-        <StackPanel Name="FileStack" Orientation="Vertical" HorizontalAlignment="Left" Width="350"  >
+        <StackPanel Name="FileStack" Orientation="Vertical" HorizontalAlignment="Left" Width="350">
             <Label>Select the files you would like to combine</Label>
             <StackPanel fw:PointerTracker.Enabled="True" Margin="3" HorizontalAlignment="Left" Orientation="Horizontal" Width="350">
                 <TextBox Width="275"
@@ -37,8 +37,9 @@
             <Button Content="Save" HorizontalAlignment="Right" Width="75" Click="SaveFile_Click" VerticalAlignment="Bottom" Margin="3"
                 Style="{StaticResource ButtonRevealStyle}" 
                 />
+            <Label Name="ErrorText" Content="You need to select at least two files before saving" Visibility="Hidden"></Label>
         </StackPanel>
-
+        
 
     </Grid>
 </fw:AcrylicWindow>

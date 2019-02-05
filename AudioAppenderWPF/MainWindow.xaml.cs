@@ -20,7 +20,7 @@ namespace AudioAppenderWPF
 
         private void OpenFile_Click(object sender, RoutedEventArgs e)
         {
-           
+           ErrorText.Visibility = Visibility.Hidden;
 
             string file = string.Empty;
             var dialog = new OpenFileDialog();
@@ -35,7 +35,31 @@ namespace AudioAppenderWPF
 
         private void SaveFile_Click(object sender, RoutedEventArgs e)
         {
+            var files = new List<string>();
+            foreach (var selectedFile in FileStack.Children)
+            {
+                if (selectedFile is StackPanel)
+                {
+                    var selectedFileStack = (StackPanel)selectedFile;
+                    foreach (var property in selectedFileStack.Children)
+                    {
+                        if (property.GetType() == typeof(TextBox))
+                        {
+                            var textbox = (TextBox)property;
+                            if (!string.IsNullOrWhiteSpace(textbox.Text))
+                            {
+                                files.Add(textbox.Text);
+                            }
+                        }
+                    }
+                }
+            }
 
+            if(files.Count <2)
+            {
+                ErrorText.Visibility = Visibility.Visible;
+                return;
+            }
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "(*.mp3)|*.mp3";
             saveFileDialog.DefaultExt = "mp3";
@@ -43,25 +67,7 @@ namespace AudioAppenderWPF
             {
                 var audioConcatenator = new AudioConcatenator();
 
-                var files = new List<string>();
-                foreach (var selectedFile in FileStack.Children)
-                {
-                    if (selectedFile is StackPanel)
-                    {
-                        var selectedFileStack = (StackPanel)selectedFile;
-                        foreach (var property in selectedFileStack.Children)
-                        {
-                            if (property.GetType() == typeof(TextBox))
-                            {
-                                var textbox = (TextBox)property;
-                                if (!string.IsNullOrWhiteSpace(textbox.Text))
-                                {
-                                    files.Add(textbox.Text);
-                                }
-                            }
-                        }
-                    }
-                }
+                
 
                 var output = audioConcatenator.Concatenate(files.ToArray());
                 using (var fileStream = File.Create(saveFileDialog.FileName))
